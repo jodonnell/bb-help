@@ -1,0 +1,35 @@
+<html>
+    <body>
+        <style>
+         #money {
+             font-size: 80px;
+             text-align: center;
+             margin-top: 150px;
+         }
+
+         #tax {
+             font-size: 60px;
+         }
+         .line {
+             margin-top: 20px;
+             text-align: center;
+             color: #333
+         }
+        </style>
+        <script>
+         const millisecondRate = 0.00011678345011678346
+         const startTime = new Date()
+
+         setInterval(() => {
+             const currentTime = new Date()
+             const money = ((currentTime - startTime) * millisecondRate).toFixed(2)
+             document.getElementById('money').innerHTML = `$${money}`
+             document.getElementById('tax').innerHTML = `$${(money * 0.7).toFixed(2)}`
+         }, 100)
+         
+        </script>
+
+        <div id="money" class="line"></div>
+        <div id="tax" class="line"></div>
+    </body>
+</html>
